@@ -8,7 +8,7 @@ body {
     padding: 0;
     color: #FFFFFF; /* Pure white text */
     background-color: #040404;
-    background: url('https://img.freepik.com/premium-psd/luxurious-penthouse-living-room-with-city-view_555601-56969.jpg?uid=R178691116&ga=GA1.1.243397321.1741689123&semt=ais_hybrid') no-repeat center center fixed;
+    background: url('https://img.freepik.com/premium-photo/pool-with-palm-trees-slowing-down-moving-scene_1092689-43785.jpg?uid=R178691116&ga=GA1.1.243397321.1741689123&semt=ais_hybrid') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -41,7 +41,7 @@ header {
 /* Add padding to the body to prevent content from being hidden behind the fixed header */
 body {
     padding-top: 80px; /* Adjust based on the header's height */
-    position: relative;
+    
 }
 
 
@@ -56,34 +56,44 @@ body {
   
 }
 
-/* Soft Background Animation */
+/* Modern Soft Background Animation */
 #home::before {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 115, 0, 0.2) 0%, transparent 60%);
-    transform: rotate(25deg);
-    animation: backgroundGlow 8s infinite alternate ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 115, 0, 0.5) 0%, transparent 70%);
+    opacity: 0.6;
+    transform: scale(1);
+    animation: backgroundGlow 10s infinite alternate ease-in-out;
+    z-index: -1;
 }
 
-/* Keyframe Animation for Glow Effect */
+/* Keyframes for Smooth Animation */
 @keyframes backgroundGlow {
     0% {
-        transform: rotate(25deg) scale(1);
-        opacity: 0.5;
+        transform: scale(1);
+        opacity: 0.7;
+        filter: blur(2px);
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+        filter: blur(5px);
     }
     100% {
-        transform: rotate(20deg) scale(1.2);
+        transform: scale(1);
         opacity: 0.7;
+        filter: blur(2px);
     }
 }
+
 
 /* Smooth Hover Effect */
 #home:hover {
-    transform: scale(1.03);
+    transform: scale(0.70);
     box-shadow: 0px 8px 30px rgba(255, 115, 0, 0.6);
 }
 
@@ -396,7 +406,7 @@ input:focus, select:focus, textarea:focus {
     padding: 40px 20px;
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 500px;
+    max-width: 26cm;
     border-bottom: 3px solid #FFFFFF;
 }
 
@@ -404,8 +414,14 @@ input:focus, select:focus, textarea:focus {
 #booking-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    align-items: center;
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
+    background: rgba(37, 33, 31, 0.9);
+    border: 2px solid #FFFFFF;
+    border-radius: 12px;
 }
 
 /* Input Fields */
@@ -417,10 +433,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 .form-group label {
-    font-weight: 400;
-    margin-bottom: 5px;
-    color: #ff7300;
-    font-size: 14px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+    width: 100%;
 }
 
 .form-group input,
@@ -620,21 +636,63 @@ input:focus, select:focus, textarea:focus {
 /* ============================ */
 /* Responsive Design */
 /* ============================ */
+/* Mobile Styles for Better Fit */
 @media (max-width: 768px) {
+    /* Adjust Header Navigation */
+    ul {
+        display: flex;
+        flex-direction: column; /* Stack menu items */
+        text-align: center;
+        padding: 0;
+    }
+
+    ul li {
+        list-style: none;
+        margin: 10px 0;
+    }
+
+    ul li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 18px; /* Make text readable */
+    }
+
+    /* Adjust Contact Section */
     #contact {
         max-width: 95%;
-        padding: 50px 15px;
+        padding: 30px 10px;
     }
 
     #contact-form {
-        max-width: 90%;
-        padding: 20px;
+        max-width: 100%;
+        padding: 15px;
     }
 
     .contact-info {
-        max-width: 90%;
+        max-width: 100%;
+    }
+
+    /* General Section Adjustments */
+    section {
+        padding: 40px 15px; /* Reduce padding for smaller screens */
+        text-align: center; /* Center content */
+    }
+
+    /* Adjust Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Improve Buttons */
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
     }
 }
+
 
 
 /* Footer */
